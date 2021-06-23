@@ -1,8 +1,8 @@
 {
-  "homepage:": "http://Cd4sh.github.io/ai-reversi",
-  "name": "reversi",
-  "version": "0.1.0",
+  "name": "ai-reversi",
+  "version": "0.0.1",
   "private": true,
+  "homepage:": "ai-reversi/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.13.0",
     "@testing-library/react": "^11.2.7",
@@ -18,11 +18,11 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
