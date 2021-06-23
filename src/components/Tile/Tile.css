@@ -1,0 +1,48 @@
+.tile{
+    width: 100px;
+    height: 100px;
+    background-color: forestgreen;
+
+    display: grid;
+    place-content: center;
+    background-position: center;
+
+    border-style: solid;
+    border-width: 6px;
+    border-color: black;
+}
+
+.tile .piece {
+    width: 100px;
+    height: 100px;
+    
+    display: grid;
+    place-content: center;
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 80px;
+}
+
+.tile .piece:active {
+    cursor: grabbing;
+}
+
+.tile .candidate{
+    opacity: 0.4;
+
+    display: grid;
+    place-content: center;
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 45px;
+    width: 80px;
+    height: 80px;
+}
+
+.tile .candidate:hover{
+    opacity: 0.8;
+    cursor:pointer;
+    background-size: 50px;
+}
