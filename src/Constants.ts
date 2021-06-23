@@ -6,7 +6,7 @@ export const GRID_SIZE = 100;
 
 export const BIMAGE = "assets/images/bpiece.png";
 export const WIMAGE = "assets/images/wpiece.png";
-export const CIMAGE = `assets/images/cw.png`;
+export const CIMAGE = "assets/images/cw.png";
 
 export const EASY = 6;
 

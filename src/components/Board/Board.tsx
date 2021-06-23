@@ -40,7 +40,7 @@ export default function Board(){
       }
     }
   }
-
+  
   function dropPiece(e: React.MouseEvent){
 
     const element = e.target as HTMLElement;
