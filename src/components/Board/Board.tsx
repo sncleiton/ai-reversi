@@ -17,7 +17,6 @@ import {
 
 let candidateMoves: number[] = [];
 
-
 export default function Board(){  
   const machine = new Adversary();
 

@@ -7,7 +7,6 @@ export const GRID_SIZE = 100;
 export const BIMAGE = "assets/images/bpiece.png";
 export const WIMAGE = "assets/images/wpiece.png";
 export const CIMAGE = "assets/images/cw.png";
-
 export const EASY = 6;
 
 export function samePosition(p1: Position, p2: Position) {

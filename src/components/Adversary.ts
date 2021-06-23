@@ -20,7 +20,6 @@ import{
           dirs.push(DIR[i]);
         }
       }
-
       pieces[play] = {
         image: WIMAGE,
         position: {
