@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 import "./Board.css";
-import Tile from "../Tile/Tile";
+import Tile from "./Tile/Tile";
 import Adversary from "../Adversary";
 
 import {
@@ -18,7 +18,7 @@ const malloc = require('lodash');
 
 let candidateMoves: number[] = [];
 
-export default function Board(){  
+export default function Board(){
   const machine = new Adversary();
 
   const [pieces, setPieces] = useState<Piece[]>(initialBoardState);

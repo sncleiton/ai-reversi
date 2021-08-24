@@ -1,7 +1,7 @@
 import "./Tile.css";
 import{
   PieceType,
-}from "../../Constants";
+}from "../../../Constants";
 
 interface Props {
   id :string;

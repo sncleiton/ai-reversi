@@ -8,9 +8,9 @@ export const DIR: number[] = [-9, -8, -7, -1, 1, 7, 8, 9];
 export const BIMAGE = bpiece;
 export const WIMAGE = wpiece;
 export const CIMAGE = cw;
-export const EASY = 3;
-export const MEDIUM = 5;
-export const HARD = 10;
+export const EASY :number = 3;
+export const MEDIUM :number = 5;
+export const HARD :number = 10;
 export interface Position {
   x: number;
   y: number;

@@ -1,6 +1,6 @@
 import put_piece from './assets/sound/put_piece.mp3';
 import go_go from './assets/sound/go_go.mp3';
-import over_lose from './assets/sound/put_piece.mp3';
+import over_lose from './assets/sound/over_lose.mp3';
 import you_win from './assets/sound/you_win.mp3';
 import look_out from './assets/sound/look_out.mp3';
 import{
