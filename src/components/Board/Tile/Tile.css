@@ -1,6 +1,6 @@
 .tile{
-    width: 10vh;
-    height: 10vh;
+    width: min(10vw, 10vh);
+    height: min(10vw, 10vh);
     background-color: forestgreen;
 
     display: grid;
@@ -8,20 +8,20 @@
     background-position: center;
 
     border-style: solid;
-    border-width: 0.6vh;
+    border-width: min(0.5vw, 0.5vh);
     border-color: black;
 }
 
 .tile .piece {
-    width: 10vh;
-    height: 10vh;
+    width: min(10vw, 10vh);
+    height: min(10vw, 10vh);
     
     display: grid;
     place-content: center;
 
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 8vh;
+    background-size: min(8vw, 8vh);
 }
 
 .tile .piece:active {
@@ -37,12 +37,12 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: 4.5vh;
-    width: 8vh;
-    height: 8vh;
+    width: min(8vw, 8vh);
+    height: min(8vw, 8vh);
 }
 
 .tile .candidate:hover{
     opacity: 0.8;
     cursor:pointer;
-    background-size: 5vh;
+    background-size: min(5vw, 5vh);
 }

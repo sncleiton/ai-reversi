@@ -7,6 +7,6 @@
     display: grid;
     place-content: center;
 
-    grid-template-columns: repeat(8, 10vh);
-    grid-template-rows: repeat(8, 10vh);
+    grid-template-columns: repeat(8, min(10vw, 10vh));
+    grid-template-rows: repeat(8, min(10vw, 10vh));
 }
