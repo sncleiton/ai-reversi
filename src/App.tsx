@@ -1,10 +1,11 @@
 import './App.css'
-import Board from './components/Board/Board';
+import {Menu, Board} from './components/Board/Board';
 
 function App() {
 
   return (
     <div id="App">
+      <Menu />
       <Board />
     </div>
   );

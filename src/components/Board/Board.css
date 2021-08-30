@@ -1,5 +1,4 @@
 #board{
-    
     width: min(80vw, 80vh);
     height: min(80vw, 80vh);
     background-color: white;
@@ -9,4 +8,16 @@
 
     grid-template-columns: repeat(8, min(10vw, 10vh));
     grid-template-rows: repeat(8, min(10vw, 10vh));
+}
+
+#menu{
+    width: min(80vw, 80vh);
+    height: min(10vw, 10vh);
+    background-color: blueviolet;
+
+    display: grid;
+    place-content: top center;
+
+    grid-template-columns: min(40vw, 40vh) repeat(4, min(10vw, 10vh));
+    grid-template-rows: repeat(2, min(10vw, 10vh));
 }

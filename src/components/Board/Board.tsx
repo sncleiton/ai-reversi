@@ -1,26 +1,60 @@
 import { useRef, useState } from "react";
 import "./Board.css";
-import Tile from "./Tile/Tile";
+import {Button, Tile} from "./Tile/Tile";
 import Adversary from "../Adversary";
+import click from '../assets/sound/click.mp3';
 
 import {
   VERTICAL_AXIS,
   HORIZONTAL_AXIS,
   CIMAGE,
-  EASY,
+  LEVELS,
   Piece,
   PieceType,
   initialBoardState,
   TeamType,
 } from "../../Constants";
-
 const malloc = require('lodash');
 
+let LEVEL : number = 2;
 let candidateMoves: number[] = [];
 
-export default function Board(){
-  const machine = new Adversary();
+export function Menu(){
+  const menuRef = useRef<HTMLDivElement>(null);
 
+  function changeDifficulty(e: React.MouseEvent){
+    const element = e.target as HTMLElement;
+    const menu = menuRef.current;
+
+    if((element.classList.contains("button0")||element.classList.contains("button1")||
+      element.classList.contains("button2")||element.classList.contains("button3")) && menu){
+      const index: number = +element.id;
+      LEVEL = LEVELS[index-100];
+      var audio = new Audio();
+      audio.src = click;
+      audio.play();
+    } 
+  }
+
+  let buttons = [];
+  buttons.push(<Button key={`${9},${9}`} id = {`${100+4}`} ptype={PieceType.NONE}/>);
+  for (let index = 0; index < 4; index++) {
+    buttons.push(<Button key={`${9},${index}`} id = {`${100+index}`} ptype={PieceType.NONE}/>);
+  }
+
+  return (
+    <div
+      onMouseDown={(e) => changeDifficulty(e)}
+      id="menu"
+      ref={menuRef}
+    >
+      {buttons}
+    </div>
+  );
+}
+
+export function Board(){
+  const machine = new Adversary();
   const [pieces, setPieces] = useState<Piece[]>(initialBoardState);
   const boardRef = useRef<HTMLDivElement>(null);
 
@@ -42,7 +76,6 @@ export default function Board(){
   }
 
   function dropPiece(e: React.MouseEvent){
-
     const element = e.target as HTMLElement;
     const board = boardRef.current;
 
@@ -58,10 +91,16 @@ export default function Board(){
       setPieces(updatedPieces);
       updatedPieces = malloc.clone(updatedPieces, true);
 
-      let iaMove = machine.alphaBeta(updatedPieces, EASY);
-      setTimeout(()=>{updatedPieces = machine.makeBMove(updatedPieces, iaMove, true)}, 999);
-      setTimeout(()=>{candidateMoves.length=0;
-        setPieces(updatedPieces)}, 1111);
+      let i = Math.random();
+      if((i*LEVEL) < 0.6){
+        let candBMoves = machine.validMoves(updatedPieces, TeamType.OPPONENT, false);
+        let iaMove = candBMoves[Math.floor(i*candBMoves.length)];
+        setTimeout(()=>{updatedPieces = machine.makeBMove(updatedPieces, iaMove, true)}, 999);
+      }else{
+        let iaMove = machine.alphaBeta(updatedPieces, LEVEL);
+        setTimeout(()=>{updatedPieces = machine.makeBMove(updatedPieces, iaMove, true)}, 999);
+      }
+      setTimeout(()=>{candidateMoves.length=0; setPieces(updatedPieces)}, 1111);
     } 
   }
 
@@ -89,3 +128,9 @@ export default function Board(){
     </div>
   );
 }
+const _ = {
+  Menu,
+  Board
+}
+
+export default _;

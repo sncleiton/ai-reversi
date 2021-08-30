@@ -155,13 +155,9 @@ export default class Adversary{
     let sucessors: number[] = [];
   
     for(let move = 0; move < pieces.length; move++){
-
       if(pieces[move].team === TeamType.NONE){
-
         for(let i = 0; i < DIR.length; i++){
-
           if(this.feasibleMove(pieces, move, DIR[i], team)){
-
             sucessors.push(move);
             i = DIR.length;
           }
@@ -188,7 +184,6 @@ export default class Adversary{
 
     for(let i = 0; i < pieces.length; i++){
       if(pieces[i].team === TeamType.OPPONENT){
-
         rUtility++;
       }else if(pieces[i].team === TeamType.OUR){
         rUtility--;
@@ -207,16 +202,13 @@ export default class Adversary{
     }
 
     let sucessors = this.validMoves(pieces, TeamType.OUR, false);
-
     let tempUtility = [Infinity, lastMove];
 
     for(let i = 0; i < sucessors.length; i++){
 
       //cloning array
       let copyPieces = malloc.clone(pieces, true);
-
       copyPieces = this.makeWMove(copyPieces, sucessors[i], false);
-
       let maxUtility = this.maxValue(
         copyPieces, sucessors[i], layer+1, depth, alpha, beta
       );
@@ -253,7 +245,6 @@ export default class Adversary{
     }
 
     for(let i = 0; i < sucessors.length; i++){
-      
       //cloning the array
       let copyPieces = malloc.clone(pieces, true);
 

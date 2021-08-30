@@ -9,7 +9,25 @@ interface Props {
   ptype: PieceType;
 }
 
-export default function Tile({id, ptype, image }: Props) {
+export function Button({id, ptype, image }: Props){
+  if(id==="104"){
+    return (
+      <div className="text">
+        {<div id={id} ><h3>Select Difficulty: </h3></div>}
+      </div>
+    )
+  }else{
+    var lvl:number = (+id)-100;
+    let className = "button".concat(`${lvl}`.toString());
+    return (
+      <div className="tile">
+        {<div id={id} className={className}> </div>}
+      </div>
+    )
+  }
+}
+
+export function Tile({id, ptype, image }: Props) {
   if(ptype === PieceType.BLACK) {
     return (
       <div className="tile">
@@ -36,3 +54,10 @@ export default function Tile({id, ptype, image }: Props) {
     );
   }
 }
+
+const _ = {
+  Button,
+  Tile
+}
+
+export default _;

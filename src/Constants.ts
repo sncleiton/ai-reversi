@@ -8,9 +8,8 @@ export const DIR: number[] = [-9, -8, -7, -1, 1, 7, 8, 9];
 export const BIMAGE = bpiece;
 export const WIMAGE = wpiece;
 export const CIMAGE = cw;
-export const EASY :number = 3;
-export const MEDIUM :number = 5;
-export const HARD :number = 10;
+export const LEVELS :number[] = [1, 3, 6, 9];
+
 export interface Position {
   x: number;
   y: number;
@@ -20,6 +19,7 @@ export enum PieceType {
   BLACK,
   WHITE,
   CANDIDATE,
+  BUTTON,
   NONE,
 }
 
@@ -34,14 +34,13 @@ export interface Piece {
   type: PieceType;
   team: TeamType;
 }
-
 let arr = new Array<Piece>(64);
 
 arr.fill({
     image: `null`,
     position: {
-      x: 9,
-      y: 9,
+      x: 10,
+      y: 10,
     },
     type: PieceType.NONE,
     team: TeamType.NONE,
